@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVista
+namespace CapaVista.Mantenimientos
 {
-    public partial class frmMantenimiento : Form
+    public partial class frmControl : Form
     {
         string UsuarioAplicacion;
-        public frmMantenimiento(string usuario)
+        public frmControl(string usuario)
         {
             InitializeComponent();
             UsuarioAplicacion = usuario;
@@ -27,7 +27,7 @@ namespace CapaVista
             List<Control> lista = new List<Control>();
             //llenado de  parametros para la aplicacion 
             navegador1.aplicacion = 301;
-            navegador1.tbl = "cliente";
+            navegador1.tbl = "productos";
             navegador1.campoEstado = "estado";
 
             //se agregan los componentes del formulario a la lista tipo control
@@ -59,17 +59,11 @@ namespace CapaVista
 
             navegador1.control = lista;
             navegador1.formulario = this;
-            navegador1.DatosActualizar = dgvCliente;
+            navegador1.DatosActualizar = dgvControl;
             navegador1.procActualizarData();
             navegador1.procCargar();
             navegador1.ayudaRuta = "HTML/Ayudas.chm";
             navegador1.ruta = "Ayuda_Mantenimiento_Centros.html";
-            
-        }
-
-        private void rbHabilitado_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

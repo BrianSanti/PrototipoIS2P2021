@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using CapaControlador;
 using CapaVistaSeguridad.Formularios;
 using CapaVistaSeguridad.Formularios.Mantenimientos;
+using CapaVista.Mantenimientos;
+using CapaVista.Proceso;
 
 namespace CapaVista
 {
@@ -208,6 +210,42 @@ namespace CapaVista
             {
                 bit.user(txtusuario.Text);
                 bit.insert("Trato de Ingresar A Asignacion de Aplicaciones a perfil", 5);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void mantenimientoControlProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (seguridad.PermisosAcceso("3", txtusuario.Text) == 1)
+            {
+                bit.user(txtusuario.Text);
+                bit.insert("Ingreso A Mantenimiento Aplicaciones", 3);
+                frmControl mantenimiento = new frmControl(txtusuario.Text);
+                mantenimiento.MdiParent = this;
+                mantenimiento.Show();
+            }
+            else
+            {
+                bit.user(txtusuario.Text);
+                bit.insert("Trato de Ingresar A Mantenimiento Aplicaciones", 3);
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void procesoRentaDeVideosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (seguridad.PermisosAcceso("3", txtusuario.Text) == 1)
+            {
+                bit.user(txtusuario.Text);
+                bit.insert("Ingreso A Mantenimiento Aplicaciones", 3);
+                frmRenta mantenimiento = new frmRenta(txtusuario.Text);
+                mantenimiento.MdiParent = this;
+                mantenimiento.Show();
+            }
+            else
+            {
+                bit.user(txtusuario.Text);
+                bit.insert("Trato de Ingresar A Mantenimiento Aplicaciones", 3);
                 MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
             }
         }

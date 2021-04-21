@@ -34,7 +34,8 @@
     <Reference Include="CapaControlador">
       <HintPath>..\CapaControlador\bin\Debug\CapaControlador.dll</HintPath>
     </Reference>
-    <Reference Include="CapaVistaNavegador">
+    <Reference Include="CapaVistaNavegador, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Navegador\CapaVista\bin\Debug\CapaVistaNavegador.dll</HintPath>
     </Reference>
     <Reference Include="CapaVistaSeguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -53,6 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mantenimientos\frmControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmControl.Designer.cs">
+      <DependentUpon>frmControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmMantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,14 +72,26 @@
     <Compile Include="MDIPrincipal.Designer.cs">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proceso\frmRenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proceso\frmRenta.Designer.cs">
+      <DependentUpon>frmRenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Mantenimientos\frmControl.resx">
+      <DependentUpon>frmControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmMantenimiento.resx">
       <DependentUpon>frmMantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proceso\frmRenta.resx">
+      <DependentUpon>frmRenta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
