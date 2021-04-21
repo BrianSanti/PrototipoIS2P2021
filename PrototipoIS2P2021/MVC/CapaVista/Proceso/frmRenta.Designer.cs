@@ -33,8 +33,8 @@ namespace CapaVista.Proceso
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.cmbDVD = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,7 @@ namespace CapaVista.Proceso
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(81, 31);
             this.txtNombre.TabIndex = 26;
-            this.txtNombre.Tag = "nombre";
+            this.txtNombre.Tag = "";
             // 
             // txtCliente
             // 
@@ -65,7 +65,7 @@ namespace CapaVista.Proceso
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(81, 31);
             this.txtCliente.TabIndex = 25;
-            this.txtCliente.Tag = "pkidproducto";
+            this.txtCliente.Tag = "";
             // 
             // label2
             // 
@@ -89,23 +89,25 @@ namespace CapaVista.Proceso
             this.lblId.TabIndex = 23;
             this.lblId.Text = "CLIENTE";
             // 
-            // comboBox1
+            // cmbCliente
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(279, 98);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 30);
-            this.comboBox1.TabIndex = 27;
+            this.cmbCliente.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(279, 98);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(171, 30);
+            this.cmbCliente.TabIndex = 27;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cmbDVD
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(279, 144);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(171, 30);
-            this.comboBox2.TabIndex = 28;
+            this.cmbDVD.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDVD.FormattingEnabled = true;
+            this.cmbDVD.Location = new System.Drawing.Point(279, 144);
+            this.cmbDVD.Name = "cmbDVD";
+            this.cmbDVD.Size = new System.Drawing.Size(171, 30);
+            this.cmbDVD.TabIndex = 28;
+            this.cmbDVD.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -203,8 +205,8 @@ namespace CapaVista.Proceso
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbDVD);
+            this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.label2);
@@ -226,8 +228,8 @@ namespace CapaVista.Proceso
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbCliente;
+        private System.Windows.Forms.ComboBox cmbDVD;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
